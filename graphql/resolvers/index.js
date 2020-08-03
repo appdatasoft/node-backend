@@ -5,6 +5,7 @@ const Team = require("../../models/teamModel");
 const Email = require("../../models/emailModel");
 const factoryResolver = require("./factoryResolver");
 const { mailer } = require("../../utils/mailer");
+const Appointment = require("../../models/appointmentModel");
 
 const getIvdrips = factoryResolver.getAll(Ivdrip);
 const getTherapies = factoryResolver.getAll(Therapie);
@@ -21,10 +22,28 @@ const sendEmail = async({ input }) => {
     }
 };
 
+const getAppointments = factoryResolver.getAll(Appointment);
+
+const createAppointment = ({ input }) => {
+    return factoryResolver.create(Appointment, input);
+};
+
+const updateAppointment = (input) => {
+    return factoryResolver.update(Appointment, input);
+};
+
+const deleteAppointment = ({ id }) => {
+    return factoryResolver.delete(Appointment, id);
+};
+
 module.exports = {
     getIvdrips,
     getTherapies,
     getServices,
     getTeams,
     sendEmail,
+    createAppointment,
+    updateAppointment,
+    deleteAppointment,
+    getAppointments,
 };

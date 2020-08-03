@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/beverly-hills-backend/dev/1596454403881-2020-08-03T11:33:23.881Z/beverly-hills-backend.zip"
+          "S3Key": "serverless/beverly-hills-backend/dev/1596479714657-2020-08-03T18:35:14.657Z/beverly-hills-backend.zip"
         },
         "FunctionName": "beverly-hills-backend-dev-app",
         "Handler": "server.handler",
@@ -173,14 +173,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionrJnnnyvy7VbTiqobLuwKeun6cSGnX0FS7ASXAG9DtU4": {
+    "AppLambdaVersionOVR0qBL1vmIz3NbRUv1WR1qk6MBph1xEls5sgeMEe6Y": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "zu37q80pS5icUEmomKXHZiefzGIVLPQwOsfTugjQVG4="
+        "CodeSha256": "Dh4RuM8zxlKDzhsms3v7Xp3BpqLDyT1WS+XW43nfyZ0="
       }
     },
     "ApiGatewayRestApi": {
@@ -299,7 +299,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1596454379255": {
+    "ApiGatewayDeployment1596479699296": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -359,7 +359,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionrJnnnyvy7VbTiqobLuwKeun6cSGnX0FS7ASXAG9DtU4"
+        "Ref": "AppLambdaVersionOVR0qBL1vmIz3NbRUv1WR1qk6MBph1xEls5sgeMEe6Y"
       }
     },
     "ServiceEndpoint": {

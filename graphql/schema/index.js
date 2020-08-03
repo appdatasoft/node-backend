@@ -21,9 +21,20 @@ module.exports = buildSchema(`
     subject: String!
     message:  String!
   }
-  
-  type Mutation {
-    sendEmail(input:EmailInput): Email
+
+  type Appointment {
+    _id:ID!
+    title: String!
+    message: String!
+    start: String!
+    end: String!
+  }
+
+  input AppointmentInput {
+    title: String!
+    message: String!
+    start:  String!
+    end: String!
   }
   
   type Query {
@@ -31,6 +42,14 @@ module.exports = buildSchema(`
     getTherapies:[Menu!]
     getServices:[Menu!]
     getTeams:[Menu!]
+    getAppointments:[Appointment!]
+  }
+
+  type Mutation {
+    sendEmail(input:EmailInput): Email
+    createAppointment(input:AppointmentInput): Appointment
+    updateAppointment(id:ID!, title:String, message:String, start:String): Appointment
+    deleteAppointment(id:ID!): String
   }
 
   schema {
