@@ -1,0 +1,24 @@
+# serverless.yml
+service: beverly-hills-backend
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: us-east-1
+  environment:
+    AWS_ACCESS_D: "<AWS_ACCESS_KEY>"
+    AWS_SECRET_D: "<AWS_SECRET_KEY>"
+    AWS_REGION_D: "<AWS_REGION>"
+    SENDER_EMAIL: "Codemarket <sumi@codemarket.io>"
+    DATABASE: "<MONGODB_CONNECTION_STRING>"
+
+functions:
+  app:
+    handler: server.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"
+
+plugins:
+  - serverless-offline
