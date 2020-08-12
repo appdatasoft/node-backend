@@ -146,7 +146,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/beverly-hills-backend/dev/1596479714657-2020-08-03T18:35:14.657Z/beverly-hills-backend.zip"
+          "S3Key": "serverless/beverly-hills-backend/dev/1597162027118-2020-08-11T16:07:07.118Z/beverly-hills-backend.zip"
         },
         "FunctionName": "beverly-hills-backend-dev-app",
         "Handler": "server.handler",
@@ -161,11 +161,11 @@
         "Timeout": 6,
         "Environment": {
           "Variables": {
-            "AWS_ACCESS_D": "AKIA3NIFSNCP67VXO3GP",
-            "AWS_SECRET_D": "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",
+            "AWS_ACCESS_D": "AKIA3NIFSNCPQX6635AQ",
+            "AWS_SECRET_D": "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",
             "AWS_REGION_D": "us-east-1",
             "SENDER_EMAIL": "Codemarket <sumi@codemarket.io>",
-            "DATABASE": "mongodb+srv://vivekvt:chYRsUdMSuRfbhMU@cluster0.rm1ir.mongodb.net/beverlyhills?retryWrites=true&w=majority"
+            "DATABASE": "mongodb+srv://vivekvt:vtvivekvt@cluster0.rm1ir.mongodb.net/beverlyhills?retryWrites=true&w=majority"
           }
         }
       },
@@ -173,14 +173,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionOVR0qBL1vmIz3NbRUv1WR1qk6MBph1xEls5sgeMEe6Y": {
+    "AppLambdaVersion8PbHxSvcLm6FdPJTAp9owy8VVHnwOOOBLo77BJ2o": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "Dh4RuM8zxlKDzhsms3v7Xp3BpqLDyT1WS+XW43nfyZ0="
+        "CodeSha256": "hbEPH6V7Ac+67RQ1GoPfKPUO7og8w8qw6lJnNoyBXjQ="
       }
     },
     "ApiGatewayRestApi": {
@@ -299,7 +299,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1596479699296": {
+    "ApiGatewayDeployment1597162013865": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -359,7 +359,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionOVR0qBL1vmIz3NbRUv1WR1qk6MBph1xEls5sgeMEe6Y"
+        "Ref": "AppLambdaVersion8PbHxSvcLm6FdPJTAp9owy8VVHnwOOOBLo77BJ2o"
       }
     },
     "ServiceEndpoint": {

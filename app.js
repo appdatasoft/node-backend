@@ -4,6 +4,7 @@ var cors = require("cors");
 var { graphqlHTTP } = require("express-graphql");
 const graphqlSchema = require("./graphql/schema");
 const graphqlResolver = require("./graphql/resolvers");
+const Appointment = require("./models/appointmentModel");
 
 var app = express();
 

@@ -7,10 +7,18 @@ const factoryResolver = require("./factoryResolver");
 const { mailer } = require("../../utils/mailer");
 const Appointment = require("../../models/appointmentModel");
 
-const getIvdrips = factoryResolver.getAll(Ivdrip);
-const getTherapies = factoryResolver.getAll(Therapie);
-const getServices = factoryResolver.getAll(Service);
-const getTeams = factoryResolver.getAll(Team);
+const getIvdrips = () => {
+    return factoryResolver.getAll(Ivdrip);
+};
+const getTherapies = () => {
+    return factoryResolver.getAll(Therapie);
+};
+const getServices = () => {
+    return factoryResolver.getAll(Service);
+};
+const getTeams = () => {
+    return factoryResolver.getAll(Team);
+};
 
 const sendEmail = async({ input }) => {
     try {
@@ -22,16 +30,16 @@ const sendEmail = async({ input }) => {
     }
 };
 
-const getAppointments = factoryResolver.getAll(Appointment);
-
+//  Appointment
+const getAppointments = () => {
+    return factoryResolver.getAll(Appointment);
+};
 const createAppointment = ({ input }) => {
     return factoryResolver.create(Appointment, input);
 };
-
 const updateAppointment = (input) => {
     return factoryResolver.update(Appointment, input);
 };
-
 const deleteAppointment = ({ id }) => {
     return factoryResolver.delete(Appointment, id);
 };
