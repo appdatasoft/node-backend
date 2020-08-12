@@ -16,16 +16,16 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(
-    "/graphql",
-    graphqlHTTP({
-        schema: graphqlSchema,
-        rootValue: graphqlResolver,
-        graphiql: true,
-    })
+  "/graphql",
+  graphqlHTTP({
+    schema: graphqlSchema,
+    rootValue: graphqlResolver,
+    graphiql: true,
+  })
 );
 
 app.use("/", (req, res) => {
-    res.send("Beverly Hills Backend try /graphql");
+  res.send("Beverly Hills Backend try /graphql");
 });
 
 module.exports = app;
