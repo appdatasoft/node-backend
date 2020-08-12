@@ -2,6 +2,8 @@ var { buildSchema } = require("graphql");
 
 module.exports = buildSchema(`
 
+  scalar Date
+
   type Menu {
     _id: ID!
     title: String!
@@ -11,12 +13,14 @@ module.exports = buildSchema(`
 
   type Email {
     _id:ID!
+    userId: String!
     email: String!
     subject: String!
     message:  String!
   }
 
   input EmailInput {
+    userId: String!
     email: String!
     subject: String!
     message:  String!
@@ -26,15 +30,15 @@ module.exports = buildSchema(`
     _id:ID!
     title: String!
     message: String!
-    start: String!
-    end: String!
+    start: Date!
+    end: Date!
   }
 
   input AppointmentInput {
     title: String!
     message: String!
-    start:  String!
-    end: String!
+    start:  Date!
+    end: Date!
   }
   
   type Query {
@@ -48,7 +52,7 @@ module.exports = buildSchema(`
   type Mutation {
     sendEmail(input:EmailInput): Email
     createAppointment(input:AppointmentInput): Appointment
-    updateAppointment(id:ID!, title:String, message:String, start:String): Appointment
+    updateAppointment(id:ID!, title:String, message:String, start:Date, end:Date): Appointment
     deleteAppointment(id:ID!): String
   }
 

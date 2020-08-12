@@ -18,10 +18,7 @@ const create = async(Model, input) => {
 
 const update = async(Model, input) => {
     try {
-        const data = await Model.findByIdAndUpdate(input.id, input, {
-            new: true,
-            runValidators: true,
-        });
+        const data = await Model.findByIdAndUpdate(input.id, input, { new: true });
         return data;
     } catch (error) {
         throw error;
@@ -30,7 +27,7 @@ const update = async(Model, input) => {
 
 const deleteOne = async(Model, id) => {
     try {
-        const data = Model.findByIdAndDelete(id);
+        const data = await Model.findByIdAndDelete(id);
         return "deleted";
     } catch (error) {
         throw error;
